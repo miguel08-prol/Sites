@@ -1,0 +1,425 @@
+/* Importação de fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte para o corpo do texto */
+    background-color: #0d1117; /* Fundo muito escuro, quase preto, para um visual premium */
+    color: #e6edf3; /* Texto principal em cinza claro */
+    line-height: 1.7; /* Espaçamento entre linhas para melhor leitura */
+    padding: 0; /* Remove padding global, as seções terão seu próprio */
+    display: flex; /* Para centralizar o conteúdo principal */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Estilos para o topo vazio (caso queira adicionar algo depois) */
+.top {
+    width: 100%;
+    height: 60px; /* Altura do topo */
+    background-color: #161b22; /* Um cinza um pouco mais claro para o topo */
+    border-bottom: 1px solid #2e3b47; /* Linha sutil de separação */
+    position: sticky; /* Fica fixo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top p {
+    font-family: 'Playfair Display', serif; /* Fonte para o texto do topo */
+    font-size: 1.5em;
+    color: #61dafb; /* Cor de destaque */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Container principal do corpo da notícia */
+.corpo {
+    max-width: 900px; /* Largura máxima para a coluna de conteúdo */
+    width: 100%;
+    background-color: #161b22; /* Fundo para o corpo da notícia */
+    padding: 40px 30px; /* Espaçamento interno generoso */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra intensa para dar profundidade */
+    margin: 40px auto; /* Centraliza o bloco e adiciona margens superior/inferior */
+    animation: fadeIn 1s ease-out; /* Animação de fade-in ao carregar */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título principal da notícia */
+.corpo h1 {
+    font-family: 'Playfair Display', serif; /* Fonte serifada para o título, mais clássica e elegante */
+    font-size: 3em; /* Tamanho grande para impacto */
+    color: #61dafb; /* Um azul ciano para destaque, moderno */
+    text-align: center;
+    margin-bottom: 30px; /* Mais espaço abaixo do título */
+    line-height: 1.2;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil no texto */
+    letter-spacing: -0.5px; /* Ajuste para melhor leitura em títulos grandes */
+}
+
+/* Parágrafos da notícia */
+.corpo p {
+    font-size: 1.15em; /* Tamanho de fonte confortável para leitura */
+    color: #c9d1d9; /* Cor de texto mais suave que o corpo geral */
+    text-align: justify; /* Alinha o texto em bloco */
+    margin-bottom: 20px; /* Espaçamento entre parágrafos */
+    padding: 0 10px; /* Pequeno espaçamento lateral dentro do bloco de texto */
+}
+
+/* Estilo para as imagens dentro da notícia */
+.corpo img {
+    max-width: 90%; /* Ajusta a largura máxima para ser um pouco menor que o container */
+    height: auto;
+    display: block; /* Essencial para que margin: auto funcione para centralização */
+    margin: 30px auto; /* Centraliza a imagem horizontalmente e adiciona espaço */
+    border-radius: 8px; /* Cantos arredondados para as imagens */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra suave para destacar a imagem */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+.corpo img:hover {
+    transform: scale(1.02); /* Leve zoom ao passar o mouse */
+}
+
+/* Seções importantes dentro da notícia (se você usar <strong> ou outras tags para destacar) */
+.corpo p strong { /* Estilo para texto em negrito dentro do conteúdo da notícia */
+    color: #ffb300; /* Um amarelo/laranja vibrante para destacar termos chave */
+}
+
+/* Ajustes para links dentro da notícia, se houver */
+.corpo a {
+    color: #61dafb; /* Mesma cor do título para links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.corpo a:hover {
+    color: #90d8f8; /* Mudar a cor no hover */
+    text-decoration: underline;
+}
+
+/* --- ESTILO PARA A SEÇÃO FINAL DE LINK DE JOGOS (Mantido para compatibilidade, mas pode ser removido se a estrutura for toda para o rodapé) --- */
+/* Se você quiser que o link "Tops 8 jogos" continue aparecendo como um bloco grande acima do rodapé, mantenha este estilo.
+   Se ele foi movido para dentro das colunas do rodapé, você pode remover a maioria destas regras e estilizá-lo como um link normal de coluna. */
+.link-jogos-famosos {
+    display: flex; /* Usa flexbox para alinhar imagem e texto */
+    flex-direction: column; /* Organiza em coluna (imagem em cima, texto embaixo) */
+    align-items: center; /* Centraliza horizontalmente os itens */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 40px; /* Espaço maior antes dessa seção */
+    padding: 25px;
+    background-color: #0b2230; /* Um azul escuro para diferenciar a seção */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: fit-content; /* Ajusta a largura do container ao conteúdo */
+    margin-left: auto; /* Centraliza o bloco */
+    margin-right: auto; /* Centraliza o bloco */
+}
+
+.link-jogos-famosos:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" no hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7); /* Sombra mais intensa no hover */
+}
+
+.link-jogos-famosos a {
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    color: inherit; /* Mantém a cor do texto definida pelo pai */
+    display: flex; /* Permite que o link atue como um container flexível */
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Garante que o link ocupe toda a largura do seu container */
+}
+
+.link-jogos-famosos img {
+    max-width: 100%; /* A imagem pode ser um pouco maior aqui, dependendo do design */
+    width: 250px; /* Largura fixa para a imagem do thumbnail */
+    height: 150px; /* Altura fixa para a imagem do thumbnail */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-bottom: 15px; /* Espaço entre a imagem e o título */
+    border: 2px solid #61dafb; /* Borda de destaque na imagem */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.link-jogos-famosos:hover img {
+    border-color: #ffb300; /* Muda a cor da borda no hover */
+}
+
+.link-jogos-famosos h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: #61dafb; /* Cor de destaque para o título */
+    margin: 0; /* Remove margem padrão */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+.link-jogos-famosos:hover h3 {
+    color: #ffb300; /* Muda a cor do texto no hover */
+}
+
+/* --- ESTILO DO RODAPÉ (FOOTER) - NOVO ESTILO DE SITE DE NOTÍCIAS --- */
+.rodape {
+    max-width: 900px; /* Alinha com a largura do corpo principal */
+    width: 100%;
+    background-color: #1a1a1a; /* Fundo mais escuro para o rodapé */
+    padding: 40px 20px; /* Padding interno generoso */
+    margin-top: 60px; /* Espaço acima do rodapé */
+    border-top: 2px solid #2e3b47; /* Linha sutil de separação no topo */
+    border-radius: 8px 8px 0 0; /* Cantos arredondados apenas no topo */
+    color: #a0a0a0; /* Cor de texto padrão para o rodapé */
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+
+    /* GRID para o layout de colunas */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colunas responsivas */
+    gap: 20px; /* Espaçamento entre as colunas */
+    text-align: left; /* Alinha o texto à esquerda dentro das colunas */
+}
+
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+    /* Adicionado padding para cada coluna para espaçamento interno */
+    padding: 10px;
+    /* Transição para um efeito sutil no hover das colunas */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover na coluna inteira (opcional, mas pode dar um toque legal) */
+.rodape-coluna:hover {
+    background-color: #24292e; /* Fundo um pouco mais claro no hover */
+    border-radius: 5px; /* Leves cantos arredondados no hover */
+}
+
+
+.rodape-coluna h4 {
+    font-family: 'Roboto', sans-serif; /* Consistência com o corpo */
+    font-size: 1.1em; /* Tamanho do título da coluna */
+    color: #e6edf3; /* Cor mais clara para o título da coluna */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    padding-bottom: 5px; /* Espaço entre o título e a linha */
+    border-bottom: 1px solid #444; /* Linha sutil de separação */
+}
+
+.rodape-coluna p {
+    margin: 5px 0; /* Espaço entre os links */
+    font-size: 0.9em; /* Tamanho da fonte dos links */
+    line-height: 1.4; /* Espaçamento de linha para links */
+}
+
+.rodape-coluna a {
+    color: #a0a0a0; /* Cor padrão dos links */
+    text-decoration: none; /* Remove sublinhado */
+    transition: color 0.3s ease; /* Transição suave na cor */
+    display: block; /* Garante que o link ocupe a linha inteira para o hover */
+    padding: 2px 0; /* Pequeno padding para facilitar clique */
+}
+
+.rodape-coluna a:hover {
+    color: #61dafb; /* Cor de destaque no hover */
+}
+
+/* Estilo específico para ícones de redes sociais */
+.rodape-coluna.social p a {
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.rodape-coluna.social img {
+    width: 20px; /* Tamanho dos ícones de social */
+    height: 20px;
+    vertical-align: middle; /* Alinha com o texto */
+    margin-right: 8px; /* Espaço entre ícone e texto */
+    /* Remover estilos de borda e sombra que podem vir de .corpo img */
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    transition: transform 0.2s ease;
+}
+
+.rodape-coluna.social a:hover img {
+    transform: scale(1.1); /* Leve zoom no ícone no hover */
+}
+
+
+/* REMOVER ou modificar os estilos antigos de links destacados se eles estiverem dentro das colunas do rodapé */
+/* Se você moveu "Tops 8 Jogos" e "Top 5 Filmes de Animação" para dentro das colunas do rodapé
+   como links simples (p<a href="...">), estas regras abaixo NÃO são mais necessárias ou
+   devem ser adaptadas para o novo contexto. Eu as comentei para o novo layout.
+*/
+/*
+.link-jogos-famosos {
+    display: none; /* Ou redefina para ser um link simples dentro da coluna */
+/* }
+.link-jogos-famosos img, .link-jogos-famosos h3 {
+    /* Redefina ou remova */
+/* }
+.link-rodape-super-herois {
+    display: none; /* Ou redefina para ser um link simples dentro da coluna */
+/* }
+.link-rodape-super-herois img, .link-rodape-super-herois h4 {
+    /* Redefina ou remova */
+/* }
+*/
+
+/* Oculta a linha horizontal se o grid já estiver fazendo a separação */
+.rodape hr {
+    display: none;
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .top {
+        height: 50px;
+    }
+
+    .top p {
+        font-size: 1.2em;
+    }
+
+    .corpo {
+        padding: 25px 15px;
+        margin: 20px auto;
+        border-radius: 8px;
+    }
+
+    .corpo h1 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .corpo p {
+        font-size: 1em;
+        padding: 0 5px;
+        margin-bottom: 15px;
+    }
+
+    .corpo img {
+        max-width: 95%; /* Mais largura em telas menores */
+        margin: 20px auto;
+    }
+
+    /* Rodapé Responsivo para Tablets */
+    .rodape {
+        padding: 30px 15px;
+        margin-top: 40px;
+        border-radius: 8px 8px 0 0;
+        /* Altera para 2 colunas em telas menores ou empilha se necessário */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+    .rodape-coluna {
+        padding: 8px;
+    }
+    .rodape-coluna h4 {
+        font-size: 1em;
+        margin-bottom: 10px;
+        padding-bottom: 3px;
+    }
+    .rodape-coluna p {
+        font-size: 0.85em;
+        margin: 4px 0;
+    }
+    .rodape-coluna.social img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .corpo {
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    .corpo h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .corpo p {
+        font-size: 0.95em;
+        padding: 0; /* Remove padding extra em telas muito pequenas */
+    }
+
+    .corpo img {
+        max-width: 100%; /* Ocupa toda a largura disponível em telas muito pequenas */
+        margin: 15px auto;
+    }
+
+    /* Rodapé Responsivo para Celulares */
+    .rodape {
+        padding: 20px 10px;
+        margin-top: 30px;
+        /* Empilha as colunas em uma única coluna */
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .rodape-coluna {
+        padding: 5px;
+        text-align: center; /* Centraliza o texto nas colunas empilhadas */
+    }
+    .rodape-coluna h4 {
+        font-size: 1em;
+        margin-bottom: 8px;
+        border-bottom: none; /* Remove a linha do título para um visual mais limpo quando empilhado */
+    }
+    .rodape-coluna p {
+        font-size: 0.8em;
+        margin: 3px 0;
+    }
+    .rodape-coluna a {
+        padding: 1px 0;
+    }
+    .rodape-coluna.social p a {
+        justify-content: center; /* Centraliza ícones e texto social */
+    }
+    .rodape-coluna.social img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+
+    /* Seção de jogos se mantida acima do rodapé */
+    .link-jogos-famosos {
+        padding: 15px;
+        margin-top: 25px;
+    }
+    .link-jogos-famosos img {
+        width: 180px;
+        height: 100px;
+    }
+    .link-jogos-famosos h3 {
+        font-size: 1.2em;
+    }
+}
