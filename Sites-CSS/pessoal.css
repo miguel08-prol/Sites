@@ -1,0 +1,252 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Estilo para todas as imagens, exceto as do rodapé, para centralização */
+img:not(.rodape img) {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 15px auto;
+    display: block;
+}
+
+/* Cabeçalho */
+.cabeçalho {
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cabeçalho h6 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cabeçalho h5 {
+    font-weight: normal;
+    margin-top: 10px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Corpo */
+.corpo {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #242424;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.corpo h1 {
+    color: #ffcc00;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.corpo h2 {
+    margin-top: 35px;
+    color: #ff9900;
+    font-size: 1.8em;
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 8px;
+    margin-left: 10px;
+}
+
+.corpo h3 {
+    margin: 15px 10px;
+    font-weight: normal;
+    background-color: #292929;
+    padding: 12px;
+    border-left: 5px solid #ff6600;
+    border-radius: 5px;
+    font-size: 1.05em;
+}
+
+/* Rodapé (novo e melhorado) */
+footer {
+    background-color: #111;
+    padding: 25px;
+    margin-top: 60px;
+    border-top: 2px solid #ff6600;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.perfil img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #ffcc00;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.perfil img:hover {
+    transform: scale(1.1);
+}
+
+.perfil p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.contato-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.botao-sobremim button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.botao-sobremim button:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}
+
+.redes-sociais {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.redes-sociais p {
+    color: #f0f0f0;
+    font-weight: bold;
+    margin: 0;
+}
+
+.redes-sociais li a {
+    color: #e88c03;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais li a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.noticia-link a {
+    color: #e88c03;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.noticia-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade do rodapé */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .cabeçalho {
+        padding: 15px;
+    }
+
+    .cabeçalho h6 {
+        font-size: 1.5em;
+    }
+
+    .cabeçalho h5 {
+        font-size: 1em;
+    }
+
+    .corpo {
+        padding: 15px;
+    }
+
+    .corpo h1 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    .corpo h2 {
+        font-size: 1.5em;
+        margin-top: 25px;
+    }
+
+    .corpo h3 {
+        font-size: 1em;
+        margin: 10px 5px;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 20px;
+        margin-top: 40px;
+    }
+    
+    .perfil img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .perfil p {
+        font-size: 1em;
+    }
+
+    .redes-sociais {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .rodape button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}

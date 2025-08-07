@@ -1,0 +1,121 @@
+/* Basic styles and resets */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Header Section --- */
+.topo {
+    background-color: #ffffff;
+    border-bottom: 3px solid #0056b3;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.topo h1 {
+    margin: 0;
+    font-size: 2.8em;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.lista li {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.lista li:hover {
+    color: #0056b3;
+    cursor: pointer;
+}
+
+/* --- Main Content Section --- */
+.Principal {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style for the 'Destaques' heading */
+.Principal h3 {
+    font-size: 2em;
+    color: #0056b3;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.noticia {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.noticia li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noticia li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.noticia li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.noticia li img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.noticia h4 {
+    font-size: 1.4em;
+    margin: 15px;
+    color: #222;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    .topo h1 {
+        font-size: 2em;
+    }
+
+    .lista {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .lista li {
+        font-size: 1em;
+    }
+}
