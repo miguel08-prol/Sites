@@ -1,13 +1,23 @@
+/* Importação de fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Configurações básicas do corpo */
 body {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* Cabeçalho superior */
 .top {
@@ -24,17 +34,16 @@ body {
 /* Container principal que engloba o corpo e o rodapé */
 .conteudo-principal {
     max-width: 900px;
+    width: 100%;
     margin: 40px auto;
     background-color: #1f1f1f;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 0 20px;
+    flex-grow: 1;
 }
 
 /* Corpo da notícia */
-.corpo {
-    padding: 0 20px;
-}
-
 .corpo h1 {
     font-size: 2.5em;
     color: #00aaff;
@@ -52,6 +61,14 @@ body {
     padding: 0 15px;
 }
 
+.corpo p.intro {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.2em;
+    border-left: 4px solid #00aaff;
+    padding-left: 20px;
+}
+
 .corpo img {
     width: 100%;
     max-width: 800px;
@@ -67,44 +84,75 @@ body {
     transform: scale(1.02);
 }
 
-/* Estilo do rodapé */
+.corpo figure {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.corpo figcaption {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* --- Tópico: Rodapé (Footer) --- */
 .rodape {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto 40px;
+    background-color: #1f1f1f;
     padding: 40px 20px;
     border-top: 3px solid #00aaff;
     color: #e0e0e0;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
 }
 
-.rodape p {
-    font-size: 1.1em;
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.rodape-coluna h4 {
+    font-size: 1.2em;
     font-weight: bold;
     color: #00aaff;
     margin: 0 0 15px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
 }
 
-.rodape ul {
+.rodape-coluna ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.rodape ul li {
-    /* Esta é a regra para dar espaçamento entre os itens da lista */
-    margin-bottom: 15px;
+.rodape-coluna ul li {
+    margin-bottom: 10px;
 }
 
-.rodape a {
+.rodape-coluna a {
     color: #b0b0b0;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.rodape a:hover {
+.rodape-coluna a:hover {
     color: #fff;
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
+}
+
+.rodape-copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
 }
 
 /* Responsividade */
@@ -114,14 +162,23 @@ body {
     }
 
     .conteudo-principal {
-        margin: 20px auto;
+        margin: 20px 10px;
         border-radius: 0;
         box-shadow: none;
+        padding: 0 10px;
     }
 
     .rodape {
         grid-template-columns: 1fr;
+        gap: 20px;
         text-align: center;
         border-radius: 0;
+        padding: 20px;
+    }
+
+    .rodape-coluna h4 {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 10px;
     }
 }
