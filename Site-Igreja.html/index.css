@@ -1,0 +1,197 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* --- Reset e Variáveis de Cores --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0d47a1; /* Azul escuro principal */
+    --secondary-color: #fdd835; /* Dourado suave para destaque */
+    --bg-color: #f8f9fa; /* Fundo claro e limpo */
+    --card-bg: #ffffff; /* Fundo do card branco */
+    --text-color: #343a40; /* Cinza escuro para o texto */
+    --light-text: #6c757d; /* Cinza claro para descrições */
+    --border-color: #e9ecef; /* Cor de borda suave */
+    --soft-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --glow-effect: 0 0 10px rgba(253, 216, 53, 0.6);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Cabeçalho (Topo) --- */
+.topo {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.topo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.lista {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.lista a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.lista a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.lista a:hover {
+    color: var(--primary-color);
+}
+
+.lista a:hover::after {
+    width: 100%;
+}
+
+/* --- Seção Principal --- */
+.Principal {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 5%;
+}
+
+.Principal h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 40px 0 30px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.Principal h3:hover {
+    transform: translateY(-3px);
+    text-shadow: var(--glow-effect);
+}
+
+.Principal h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.Principal h3:hover::after {
+    width: 80px;
+}
+
+/* --- Galeria de Cards (Inscrições e Fotos) --- */
+.corpo {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.corpo li {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corpo li:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.corpo a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.corpo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.corpo li:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.corpo h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 15px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.corpo li:hover h4 {
+    color: var(--secondary-color);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+    .lista {
+        gap: 20px;
+    }
+    .Principal h3 {
+        font-size: 2rem;
+    }
+    .corpo {
+        gap: 20px;
+    }
+}

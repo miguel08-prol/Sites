@@ -1,0 +1,239 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* --- Reset e Variáveis --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0d47a1; /* Azul escuro principal */
+    --secondary-color: #fdd835; /* Dourado suave para destaque */
+    --bg-color: #f8f9fa; /* Fundo claro e limpo */
+    --card-bg: #ffffff; /* Fundo do card branco */
+    --text-color: #343a40; /* Cinza escuro para o texto */
+    --light-text: #6c757d; /* Cinza claro para descrições */
+    --border-color: #e9ecef; /* Cor de borda suave */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Cabeçalho --- */
+.cabeçalho {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cabeçalho h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.lista {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.lista a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.lista a:hover {
+    color: var(--primary-color);
+}
+
+/* Estilo para o ícone de home */
+.home-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--primary-color);
+}
+
+.home-icon:hover {
+    transform: scale(1.1);
+}
+
+/* --- Seção de Conteúdo Principal --- */
+.corpo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 5%;
+}
+
+.corpo > h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.corpo > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 50px;
+}
+
+/* --- ESTILO PARA A IMAGEM PRINCIPAL (CLASSE .meio) --- */
+.meio {
+    display: block;
+    width: 100%;
+    max-height: 400px; /* Altura fixa para destaque */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 50px;
+    transition: transform 0.3s ease;
+}
+
+.meio:hover {
+    transform: scale(1.02);
+}
+
+/* --- Título de Seção --- */
+.corpo h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.corpo h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Estilo para os Cards --- */
+.card-section {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.card-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Inverte a ordem do conteúdo para um visual dinâmico */
+.card-section:nth-of-type(odd) {
+    grid-template-areas: "image content";
+}
+.card-section:nth-of-type(even) {
+    grid-template-areas: "content image";
+}
+
+.card-section img {
+    grid-area: image;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-section:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    grid-area: content;
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+.card-content a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.card-content a:hover {
+    color: #ffc107;
+    border-bottom-color: #ffc107;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .cabeçalho {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+    .lista {
+        gap: 20px;
+    }
+    .corpo h1 {
+        font-size: 2.2rem;
+    }
+    .card-section {
+        grid-template-areas:
+            "image"
+            "content";
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .card-section:nth-of-type(odd) {
+        grid-template-areas:
+            "image"
+            "content";
+    }
+    .card-content {
+        padding: 0;
+    }
+}
