@@ -1,200 +1,120 @@
-/* Importação de fontes */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* --- Variáveis de Cores e Efeitos --- */
 :root {
-    --primary-color: #004d99; /* Azul principal mais vibrante */
-    --secondary-color: #ffd700; /* Dourado vibrante */
-    --bg-color: #f0f4f8; /* Fundo off-white com tom de azul */
-    --card-bg: #ffffff; /* Fundo branco para os cards */
-    --text-color: #2c3e50; /* Cinza escuro para o texto */
-    --glow-effect: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3); /* Efeito de brilho dourado */
+    --primary-color: #215173;
+    --secondary-color: #f9cc00;
+    --bg-color: #f6f9fc;
+    --text-color: #2c3e50;
+    --card-bg: #fff;
+    --hover-glow: 0 0 15px rgba(249, 204, 0, 0.5);
 }
 
-/* --- Reset e Estilo Básico --- */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.7;
-    padding: 0;
-    overflow-x: hidden;
-    position: relative;
+    line-height: 1.8;
+    padding-bottom: 60px;
 }
 
-/* --- Efeito de Fundo Abstrato (Surpresa!) --- */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
-    z-index: -1;
-    transform: rotate(-5deg) scale(1.2);
-    transform-origin: top left;
-    filter: blur(10px);
-}
-
-/* --- Cabeçalho (Header) --- */
+/* Cabeçalho */
 .cabeçalho {
-    background: var(--card-bg);
-    padding: 25px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 5px solid var(--primary-color);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: linear-gradient(135deg, var(--primary-color), #14354d);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .cabeçalho h1 {
     font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
 
-/* Lista de navegação */
 .lista {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-.lista a {
-    color: var(--text-color);
+.lista li a {
+    color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    position: relative;
-    transition: color 0.4s ease, transform 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
 }
 
-.lista a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--secondary-color);
-    transition: width 0.4s ease;
+.lista li a:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.lista a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-.lista a:hover::after {
-    width: 100%;
-}
-
-/* --- Seção de Conteúdo Principal --- */
+/* Corpo */
 .corpo {
     max-width: 900px;
-    margin: 60px auto;
-    padding: 40px;
+    margin: 40px auto;
+    padding: 30px 20px;
     background-color: var(--card-bg);
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     animation: fadeIn 1s ease-in-out;
 }
 
-.corpo h1 {
+.corpo h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
     text-align: center;
-    font-size: 3.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
-    font-weight: 800;
-    text-shadow: var(--glow-effect);
-    background: linear-gradient(45deg, var(--secondary-color), #ffeb99);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: transform 0.5s ease;
+    position: relative;
 }
 
-.corpo h1:hover {
-    transform: scale(1.02);
+.corpo h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
 }
 
 .corpo p {
     font-size: 1.1rem;
-    color: var(--text-color);
     text-align: justify;
-    padding: 0 10px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
-/* --- Estilo para a Imagem --- */
 .corpo img {
     display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
-    margin: 40px auto;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border: 5px solid var(--secondary-color);
-    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .corpo img:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: var(--glow-effect);
+    transform: scale(1.03);
+    box-shadow: var(--hover-glow);
 }
 
-/* --- Responsividade --- */
-@media (max-width: 768px) {
-    .cabeçalho {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding: 20px;
-    }
-    .cabeçalho h1 {
-        font-size: 2rem;
-    }
-    .lista {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .lista a::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .corpo {
-        margin: 30px auto;
-        padding: 20px;
-    }
-    .corpo h1 {
-        font-size: 2.5rem;
-    }
-    .corpo p {
-        font-size: 1rem;
-    }
-}
-@media (max-width: 480px) {
-    .cabeçalho h1 {
-        font-size: 1.8rem;
-    }
-    .lista a {
-        font-size: 0.9rem;
-    }
-    .corpo h1 {
-        font-size: 2rem;
-    }
-}
-/* Animações */
+/* Animação */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -203,5 +123,29 @@ body::before {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cabeçalho h1 {
+        font-size: 2rem;
+    }
+
+    .lista {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .corpo h2 {
+        font-size: 1.8rem;
+    }
+
+    .corpo {
+        padding: 20px 15px;
+    }
+
+    .corpo p {
+        font-size: 1rem;
     }
 }
