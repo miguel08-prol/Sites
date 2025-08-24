@@ -1,5 +1,7 @@
+/* Importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Variáveis de Cores e Estilos */
 :root {
     --primary-color: #215173;
     --secondary-color: #f9cc00;
@@ -9,12 +11,14 @@
     --hover-glow: 0 0 15px rgba(249, 204, 0, 0.5);
 }
 
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos do Corpo da Página */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
@@ -23,19 +27,20 @@ body {
     padding-bottom: 60px;
 }
 
-/* Cabeçalho */
+/* Estilos do Cabeçalho e Navegação */
 .cabeçalho {
     background: linear-gradient(135deg, var(--primary-color), #14354d);
     color: white;
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .cabeçalho h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .lista {
@@ -60,7 +65,7 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
-/* Corpo */
+/* Estilos da Seção Principal (Corpo) */
 .corpo {
     max-width: 900px;
     margin: 40px auto;
@@ -104,7 +109,7 @@ body {
     height: auto;
     margin: 30px auto;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     border: 5px solid var(--secondary-color);
     transition: transform 0.4s ease;
 }
@@ -114,7 +119,43 @@ body {
     box-shadow: var(--hover-glow);
 }
 
-/* Animação */
+.home-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;   /* tira o fundo */
+    padding: 0;         /* sem espaçamento extra */
+    border: none;       /* sem borda */
+    transition: transform 0.3s ease;
+}
+
+.home-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;   /* cor branca padrão */
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.1); /* zoom leve no hover */
+}
+
+.home-icon:hover svg {
+    fill: var(--secondary-color); /* muda pra dourado no hover */
+}
+
+/* Estilo do Retrato no Título */
+.retrato {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f1c40f;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Animações e Media Queries */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -126,7 +167,7 @@ body {
     }
 }
 
-/* Responsivo */
+/* Responsividade para Telas Menores */
 @media (max-width: 768px) {
     .cabeçalho h1 {
         font-size: 2rem;
@@ -147,5 +188,20 @@ body {
 
     .corpo p {
         font-size: 1rem;
+    }
+
+    .home-icon {
+        top: 15px;
+        right: 15px;
+    }
+
+    .home-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .retrato {
+        width: 60px;
+        height: 60px;
     }
 }
