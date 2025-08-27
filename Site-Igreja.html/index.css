@@ -219,21 +219,3 @@ h3::after {
         grid-template-columns: 1fr;
     }
 }
-
-.retrato {
-    width: 80px; /* Ou o tamanho que preferir */
-    height: 80px; /* A altura deve ser igual à largura para um círculo perfeito */
-    border-radius: 50%; /* Transforma a imagem em um círculo */
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
-    border: 3px solid #f1c40f; /* Borda dourada para destacar */
-    margin-left: 10px; /* Espaço entre o texto e a imagem */
-    vertical-align: middle; /* Alinha a imagem verticalmente com o texto */
-}
-
-/* Ajuste para telas menores */
-@media (max-width: 768px) {
-    .retrato {
-        width: 60px;
-        height: 60px;
-    }
-}
